@@ -28,6 +28,7 @@ img {
   border-radius: 5px;
 }
 
-.pic-caption {
+.caption {
   font-weight: 500;
+  padding: 0 .25rem;
 }
