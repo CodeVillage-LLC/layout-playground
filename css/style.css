@@ -27,3 +27,7 @@ img {
   object-fit: cover;
   border-radius: 5px;
 }
+
+.pic-caption {
+  font-weight: 500;
+}
