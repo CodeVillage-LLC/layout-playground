@@ -9,15 +9,81 @@ html, body {
   --purple: #4527a0;
 }
 
+body {
+  max-width: 2000px;
+  margin: auto;
+}
+
 img {
   max-width: 100%;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  height: 64px;
+  margin-top: 3vh;
+  background-color: white;
+}
+
+nav > div {
+  display: flex;
+  max-width: 65rem;
+  margin: auto;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, .8);
+}
+
+nav .link {
+  padding: .5rem 1.5rem;
+}
+
+nav .brand-logo {
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+
+nav .spacer {
+  flex-grow: 1;
+}
+
+.btn {
+  border: var(--purple) solid 2px;
+  border-radius: 5px;
+  color: var(--purple);
+  padding: .35rem 1.5rem .45rem;
+  font-weight: 500;
 }
 
 .pic-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
   padding: 1rem;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 640px) {
+  .pic-container {
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+  }
+
+  .pic-container div:nth-child(n+4) {
+    display: none;
+  }
+}
+@media screen and (max-width: 640px) {
+  .pic-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pic-container div:nth-child(n+5) {
+    display: none;
+  }
 }
 
 .pic-container .pic {
@@ -39,7 +105,8 @@ img {
 
 .expo {
   padding: 1rem;
-  margin: 1rem 0 2rem;
+  margin: 5rem 0 2rem;
+  text-align: center;
 }
 
 .expo .heading {
@@ -49,9 +116,10 @@ img {
   margin: 1rem 0;
 }
 
-.expo span {
+.expo .heading+p {
   font-weight: 400;
-  font-size: 40%;
+  font-size: 1.5rem;
+  opacity: .6;
   padding: 0 .5rem;
 }
 
@@ -68,4 +136,10 @@ img {
 
 button:focus {
   outline: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .expo .heading {
+    line-height: 100%;
+  }
 }
